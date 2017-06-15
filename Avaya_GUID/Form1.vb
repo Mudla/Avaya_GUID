@@ -76,7 +76,7 @@ Public Class Form1
         DT.Columns.Add(column)
 
         For Each DR As DataRow In DT2.Rows
-            If DR("Use") Then
+            If CBool(DR("Use")) Then
                 row = DT.NewRow()
                 row("ExtNo") = DR.Item((DT2.Columns.IndexOf("ExtNo")))
                 row("Guid") = DR.Item((DT2.Columns.IndexOf("GUID")))
@@ -92,31 +92,31 @@ Public Class Form1
         TextBox1.AppendText("[USERS]" & vbCrLf)
 
         For Each DR As DataRow In DT2.Rows
-            If DR("Use") = True Then
-                TextBox1.AppendText(DR.Item("ExtNo") & "=" & DR.Item("GUID") & vbCrLf)
+            If CBool(DR("Use")) = True Then
+                TextBox1.AppendText(DR.Item("ExtNo").ToString & "=" & DR.Item("GUID").ToString & vbCrLf)
             End If
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         test3()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Ausgabe_Tabelle2()
     End Sub
 
-    Private Sub DataGridView1_MouseUp(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseUp
+    Private Sub DataGridView1_MouseUp(sender As Object, e As MouseEventArgs)
         'DT2.AcceptChanges()
         DataGridView1.DataSource = DT2
         Ausgabe_Tabelle2()
     End Sub
 
-    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseDown
+    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs)
         Ausgabe_Tabelle2()
     End Sub
 End Class

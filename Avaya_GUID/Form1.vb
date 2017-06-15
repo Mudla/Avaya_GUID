@@ -99,25 +99,27 @@ Public Class Form1
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         test3()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs)
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Ausgabe_Tabelle2()
     End Sub
 
-    Private Sub DataGridView1_MouseUp(sender As Object, e As MouseEventArgs)
+    Private Sub DataGridView1_MouseUp(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseUp
         'DT2.AcceptChanges()
         DataGridView1.DataSource = DT2
         Ausgabe_Tabelle2()
     End Sub
 
-    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs)
+    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs) Handles DataGridView1.MouseDown
         Ausgabe_Tabelle2()
     End Sub
+
+
 End Class

@@ -86,6 +86,7 @@ Public Class Form1
         dgv2.DataSource = DT
         TextBox1.Clear()
 
+
         TextBox1.AppendText("[IP_OFFICE]" & vbCrLf)
         TextBox1.AppendText("host = localhost" & vbCrLf)
         TextBox1.AppendText("port = 8085" & vbCrLf)

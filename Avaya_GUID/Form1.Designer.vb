@@ -30,6 +30,7 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_Save_To_File = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -50,6 +51,7 @@ Partial Class Form1
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btn_Save_To_File)
         Me.TabPage1.Controls.Add(Me.btn_Ausgeben)
         Me.TabPage1.Controls.Add(Me.btn_Exit)
         Me.TabPage1.Controls.Add(Me.btn_Einlesen)
@@ -67,7 +69,7 @@ Partial Class Form1
         '
         Me.btn_Ausgeben.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Ausgeben.Enabled = False
-        Me.btn_Ausgeben.Location = New System.Drawing.Point(1085, 554)
+        Me.btn_Ausgeben.Location = New System.Drawing.Point(1004, 554)
         Me.btn_Ausgeben.Name = "btn_Ausgeben"
         Me.btn_Ausgeben.Size = New System.Drawing.Size(75, 23)
         Me.btn_Ausgeben.TabIndex = 9
@@ -87,7 +89,7 @@ Partial Class Form1
         'btn_Einlesen
         '
         Me.btn_Einlesen.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_Einlesen.Location = New System.Drawing.Point(1004, 554)
+        Me.btn_Einlesen.Location = New System.Drawing.Point(923, 554)
         Me.btn_Einlesen.Name = "btn_Einlesen"
         Me.btn_Einlesen.Size = New System.Drawing.Size(75, 23)
         Me.btn_Einlesen.TabIndex = 7
@@ -123,6 +125,17 @@ Partial Class Form1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btn_Save_To_File
+        '
+        Me.btn_Save_To_File.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_Save_To_File.Enabled = False
+        Me.btn_Save_To_File.Location = New System.Drawing.Point(1085, 554)
+        Me.btn_Save_To_File.Name = "btn_Save_To_File"
+        Me.btn_Save_To_File.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Save_To_File.TabIndex = 10
+        Me.btn_Save_To_File.Text = "Speichern"
+        Me.btn_Save_To_File.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -147,4 +160,5 @@ Partial Class Form1
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents btn_Save_To_File As Button
 End Class

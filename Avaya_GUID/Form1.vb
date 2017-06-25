@@ -47,6 +47,8 @@ Public Class Form1
             column.ColumnName = "Guid"
             DT2.Columns.Add(column)
 
+            DT.DefaultView.Sort = "Extn ASC"
+            DT = DT.DefaultView.ToTable
             With DT
                 For Each DR In .Rows
                     If (DR.Item(DT.Columns.IndexOf("Extn")) IsNot "") Then
@@ -113,6 +115,15 @@ Public Class Form1
                 TextBox1.AppendText(DR.Item("ExtNo").ToString & "=" & DR.Item("GUID").ToString & vbCrLf)
             End If
         Next
+        btn_Save_To_File.Enabled = True
+    End Sub
+
+    Private Sub Save_To_File()
+        Dim FileDialog As New SaveFileDialog
+
+        If FileDialog.ShowDialog() = DialogResult.OK Then
+            IO.File.WriteAllText(FileDialog.FileName, TextBox1.Text)
+        End If
     End Sub
 
     Private Sub btn_Einlesen_Click(sender As Object, e As EventArgs) Handles btn_Einlesen.Click
@@ -137,5 +148,7 @@ Public Class Form1
         Ausgabe_Tabelle2()
     End Sub
 
-
+    Private Sub btn_Save_To_File_Click(sender As Object, e As EventArgs) Handles btn_Save_To_File.Click
+        Save_To_File
+    End Sub
 End Class
